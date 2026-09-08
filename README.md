@@ -1,19 +1,21 @@
 # Skills
 
-A personal collection of reusable AI skills for workflows I want to carry forward.
+A personal collection of reusable AI skills for workflows worth carrying forward.
 
-The repository is intentionally broader than writing. A skill can encode a research method, decision process, writing workflow, quality bar, operating mode, or any other repeatable way of working that is useful enough to preserve and improve over time.
+The goal is simple: **turn good one-off processes into reusable, versioned methods that improve through use.**
 
-The goal is simple: **turn good one-off processes into reusable, versioned methods.**
+This repository is intentionally small. A skill should exist only when it preserves judgment, sequence, constraints, evidence discipline, or failure modes that materially improve future work. It should not exist merely because a task can be prompted.
 
 ## Principles
 
-- **Process over prompt.** Skills should encode a repeatable method, not a single task.
+- **Methods over prompts.** Encode a repeatable way of working, not a long instruction block for something modern models already do well.
+- **Earn a permanent skill.** Repeated usefulness, non-obvious judgment, or recurring failure modes should justify the context cost.
+- **Reasoning stays flexible.** Do not freeze early interpretations or add guardrails that prevent useful synthesis unless the workflow genuinely requires it.
+- **Evidence over confidence.** Preserve facts, inference, uncertainty, and source quality when research matters.
 - **Narrow purpose.** Each skill should have a clear job and explicit boundaries.
-- **Evidence over confidence.** When a workflow depends on research or judgment, preserve uncertainty and source material rather than smoothing it away.
-- **Portable by default.** Keep skills self-contained and avoid unnecessary dependencies on one project or conversation.
-- **Personal when intentional.** Some skills can encode preferences or voice; that should be explicit rather than accidental.
-- **Improve through use.** When a skill exposes a failure mode or better pattern, update the skill so the next run starts smarter.
+- **Portable by default.** Keep skills self-contained and avoid accidental dependence on one conversation or project.
+- **Personal when useful.** This is a personal repository; a skill may encode ways of working that are specifically useful to Toni when that is intentional.
+- **Improve through use.** When a run exposes a better distinction or recurring failure mode, update the method so the next run starts smarter.
 
 ## Repository structure
 
@@ -23,23 +25,18 @@ skills/
     SKILL.md
     templates/      # optional
     references/     # optional
-    ...             # other skill-local resources when needed
+    examples/       # optional
 ```
 
-Every skill lives under `skills/<name>/` and has a `SKILL.md` as its entry point. Supporting material stays with the skill rather than becoming shared global state unless there is a clear reason otherwise.
+Every skill lives under `skills/<name>/` and has a `SKILL.md` entry point. Supporting material stays local to the skill unless there is a clear reason to share it.
 
-See [AUTHORING.md](./AUTHORING.md) for the conventions used when creating or evolving skills in this repository.
+See [AUTHORING.md](./AUTHORING.md) for the authoring and maintenance conventions.
 
 ## Skill catalog
 
-### Thinking and writing
+### Work and thinking
 
-- [`explore`](./skills/explore/) — Explore a problem or decision space without converging prematurely.
-- [`lock-context-pack`](./skills/lock-context-pack/) — Lock source meaning and constraints before drafting.
-- [`draft-from-pack`](./skills/draft-from-pack/) — Draft from an approved context pack without inventing new decisions.
-- [`adapt-house-style`](./skills/adapt-house-style/) — Adapt approved prose to a house style without changing meaning.
-- [`proofread-minimal`](./skills/proofread-minimal/) — Make minimal correctness edits without rewriting the work.
-- [`toni-ltd-voice`](./skills/toni-ltd-voice/) — Apply Toni's intended voice when explicitly requested.
+- [`develop-work-doc`](./skills/develop-work-doc/) — Develop strategic, product, technical, or operating documents through iterative reasoning, drafting, evidence gathering, red teaming, and tightening.
 
 ### Research and mapping
 
@@ -50,7 +47,7 @@ See [AUTHORING.md](./AUTHORING.md) for the conventions used when creating or evo
 From a local clone, individual skills can be installed with tools that support the `SKILL.md` format. For example, with Skills.sh:
 
 ```bash
-npx skills add ./skills/explore
+npx skills add ./skills/develop-work-doc
 npx skills add ./skills/external-landscape-mapping
 ```
 
@@ -58,8 +55,8 @@ The individual `SKILL.md` is the source of truth for when and how a skill should
 
 ## Adding a new skill
 
-A workflow is a good candidate when it has been useful more than once, contains non-obvious judgment or failure modes worth preserving, or would benefit from improving cumulatively over time.
+A workflow is a good candidate when it has been useful repeatedly, contains non-obvious judgment worth preserving, exposes recurring failure modes, or benefits from cumulative refinement.
 
-Create a new directory under `skills/`, write the smallest skill that reliably reproduces the method, add templates or references only when they materially help, and add it to the catalog above.
+A workflow is usually **not** a good candidate when a capable model can already perform it reliably from a short instruction with no special method or personal context.
 
-The repository should become more useful through **better methods**, not simply a larger number of skills.
+The repository should become more useful through **better methods**, not a larger number of skills.
