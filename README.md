@@ -32,3 +32,11 @@ npx skills add ./skills/toni-ltd-voice
 ```
 
 Use them explicitly via your prompts.
+
+## Research and mapping skills
+
+`external-landscape-mapping` is a reusable method for building and maintaining evidence-backed external technology landscapes for internal reference, without drifting into vendor ranking or procurement.
+
+```bash
+npx skills add ./skills/external-landscape-mapping
+```
